@@ -373,7 +373,7 @@ class MemCacheDrupal implements DrupalCacheInterface {
     $this->wildcard_flushes = variable_get('memcache_wildcard_flushes', array());
     $this->invalidate = variable_get('memcache_wildcard_invalidate', MEMCACHE_WILDCARD_INVALIDATE);
     $this->cache_lifetime = variable_get('cache_lifetime', 0);
-    $this->cache_flush = variable_get('cache_flush_' . $this->bin);
+    $this->cache_flush = variable_get('cache_flush_' . $this->bin, 0);
     $this->cache_content_flush = variable_get('cache_content_flush_' . $this->bin, 0);
     $this->flushed = min($this->cache_flush, REQUEST_TIME - $this->cache_lifetime);
   }
